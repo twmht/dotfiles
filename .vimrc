@@ -13,6 +13,14 @@ filetype plugin indent on
 syntax on
 set ofu=syntaxcomplete#Complete
 
+"""Basic Mapping Settings(s)
+inoremap jj  <ESC>
+inoremap {<CR> {<CR><END><CR>}<UP><END>
+"""press S to replace the current word with the last yanked text
+nnoremap S diw"0P
+vnoremap S "_d"0P
+
+
 " remember last cursor position
 au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
 
@@ -126,10 +134,12 @@ map <C-N> :cn<CR>
 " previous position in quicklist
 map <C-P> :cp<CR>
 " NERDTree
-"autocmd VimEnter * NERDTree "Open the NERDTree When vim Startup"
 let NERDTreeWinPos  =  "left"  "where NERD tree window is placed on the screen "
 let NERDTreeWinSize = 31 "size of the NERD tree
 let NERDChristmasTree=1
-nnoremap <silent> <F6> :NERDTree<CR>
+"autocmd vimenter * NERDTree "  open a NERDTree automatically
+autocmd vimenter * if !argc() | NERDTree | endif " open a NERDTree automatically when vim starts up if no files were specified
+autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif "close vim if the only window left open is a NERDTree
+"nnoremap <silent> <F6> :NERDTree<CR>
 "let  NERDTreeShowBookmarks=1 "一直顯示書籤
 "let  NERDTreeChDirMode=2 "打開書籤時，自動將Vim的pwd 設為打開的目錄，如果你的項目有tags文件，你會發現這個命令很有幫助
