@@ -8,6 +8,9 @@ set ffs=unix,mac,dos
 set number
 set showmode
 set nocompatible
+set cursorline
+set wildmenu
+set wildmode=list:full
 filetype on
 filetype plugin indent on
 syntax on
@@ -32,8 +35,6 @@ set termencoding=utf-8
 
 """ Color Scheme Setting(s)
 colorscheme tir_black
-"highlight Pmenu ctermfg=1 ctermbg=4 guibg=#CCCCCC
-"set guifont=Courier\ New:h16
 
 """ Backup Setting(s)
 "set backup
@@ -49,7 +50,7 @@ set tabstop=4
 set softtabstop=4
 """for python
 autocmd FileType python set complete+=k~/.vim/syntax/python.vim isk+=.,(
-autocmd FileType python set omnifunc=pythoncomplete#Complete
+let g:pydiction_location = '~/.vim/bundle/Pydiction/complete-dict'
 
 """ taglist settings
 map <F2> <ESC>:TlistToggle<CR>
@@ -106,9 +107,29 @@ let OmniCpp_DefaultNamespaces = ["std", "_GLIBCXX_STD"]
 au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
 set completeopt=menuone,menu,longest,preview
 
-"AutoPupUp
-let g:acp_completeOption = '.,w,b,u,t,i,k'
-"let g:acp_behaviorSnipmateLength=1
+""" neocomplcache
+let g:neocomplcache_enable_at_startup = 1
+" Use smartcase.
+let g:neocomplcache_enable_smart_case = 1
+" Use camel case completion.
+let g:neocomplcache_enable_camel_case_completion = 1
+" Use underbar completion.
+let g:neocomplcache_enable_underbar_completion = 1
+" Set minimum syntax keyword length.
+let g:neocomplcache_min_syntax_length = 3
+let g:neocomplcache_lock_buffer_name_pattern = '\*ku\*'
+" open the snippet
+imap <silent><C-l> <Plug>(neocomplcache_snippets_force_expand)
+smap <silent><C-l> <Plug>(neocomplcache_snippets_force_expand) 
+
+"jump to next placeholder
+imap <silent><C-k> <Plug>(neocomplcache_snippets_force_jump)
+smap <silent><C-k> <Plug>(neocomplcache_snippets_force_jump)
+
+" <C-h>, <BS>: close popup and delete backword char.
+inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
+
+
 " auto compile using makefile
 function! HasError(qflist)
     for i in a:qflist
