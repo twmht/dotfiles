@@ -1,7 +1,39 @@
-" pathogen
+" vundle
 filetype off
-call pathogen#infect()
-call pathogen#helptags()
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+" let Vundle manage Vundle
+" required! 
+Bundle 'gmarik/vundle'
+Bundle 'tpope/vim-fugitive'
+Bundle 'Lokaltog/vim-easymotion'
+Bundle 'scrooloose/nerdtree'
+Bundle 'Twinside/vim-cuteErrorMarker'
+Bundle 'wincent/Command-T'
+Bundle 'Lokaltog/vim-powerline'
+Bundle 'Shougo/neocomplcache'
+Bundle 'Shougo/neocomplcache-snippets-complete'
+Bundle 'scrooloose/nerdcommenter'
+Bundle 'majutsushi/tagbar'
+" vim-scripts repos
+Bundle 'L9'
+Bundle 'FuzzyFinder'
+Bundle 'a.vim'
+Bundle 'Efficient-python-folding'
+Bundle 'OmniCppComplete'
+Bundle 'Pydiction'
+Bundle 'indent-motion'
+Bundle 'pydoc'
+Bundle 'javacomplete'
+Bundle 'python_match.vim'
+Bundle 'vimwiki'
+Bundle 'python.vim'
+Bundle 'TabBar'
+
+
+
+" My Bundles here:
+
 """ Basic Setting(s)
 set mouse=nv
 set ffs=unix,mac,dos
@@ -10,10 +42,11 @@ set showmode
 set nocompatible
 set cursorline
 set wildmenu
-set wildmode=list:full
+"set wildmode=list:full
 filetype on
 filetype plugin indent on
 syntax on
+"turn on omnicomplete
 set ofu=syntaxcomplete#Complete
 
 """Basic Mapping Settings(s)
@@ -52,19 +85,9 @@ set softtabstop=4
 autocmd FileType python set complete+=k~/.vim/syntax/python.vim isk+=.,(
 let g:pydiction_location = '~/.vim/bundle/Pydiction/complete-dict'
 
-""" taglist settings
-map <F2> <ESC>:TlistToggle<CR>
-let Tlist_Show_One_File = 1 " Displaying tags for only one file~
-let Tlist_Exist_OnlyWindow = 1 " if you are the last, kill yourself
-let Tlist_Use_Right_Window = 0 " split to the right side of the screen
-let Tlist_Sort_Type = "order" " sort by order or name
-let Tlist_Display_Prototype = 0 " do not show prototypes and not tags in the taglist window.
-let Tlist_Compart_Format = 1 " Remove extra information and blank lines from the taglist window.
-let Tlist_GainFocus_On_ToggleOpen = 0 " Jump to taglist window on open.
-let Tlist_Display_Tag_Scope = 1 " Show tag scope next to the tag name.
-let Tlist_Close_On_Select = 0 " Close the taglist window when a file or tag is selected.
-let Tlist_Enable_Fold_Column = 0 " Don't Show the fold indicator column in the taglist window.
-let Tlist_WinWidth = 40
+""" tagbar settings
+nnoremap <silent> <F9> :TagbarToggle<CR>
+
 
 """ Folding Setting(s)
 set foldenable
@@ -129,6 +152,12 @@ smap <silent><C-k> <Plug>(neocomplcache_snippets_force_jump)
 " <C-h>, <BS>: close popup and delete backword char.
 inoremap <expr><C-h> neocomplcache#smart_close_popup()."\<C-h>"
 
+"vimwiki
+let wiki = {}
+let wiki.path = '~/vimwiki/'
+let wiki.nested_syntaxes = {'python': 'python', 'c++': 'cpp','c': 'c'}
+let g:vimwiki_list = [wiki]
+
 
 " auto compile using makefile
 function! HasError(qflist)
@@ -159,8 +188,6 @@ let NERDTreeWinPos  =  "left"  "where NERD tree window is placed on the screen "
 let NERDTreeWinSize = 31 "size of the NERD tree
 let NERDChristmasTree=1
 "autocmd vimenter * NERDTree "  open a NERDTree automatically
-autocmd vimenter * if !argc() | NERDTree | endif " open a NERDTree automatically when vim starts up if no files were specified
-autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif "close vim if the only window left open is a NERDTree
-"nnoremap <silent> <F6> :NERDTree<CR>
-"let  NERDTreeShowBookmarks=1 "一直顯示書籤
-"let  NERDTreeChDirMode=2 "打開書籤時，自動將Vim的pwd 設為打開的目錄，如果你的項目有tags文件，你會發現這個命令很有幫助
+nnoremap <silent> <F6> :NERDTree<CR>
+let  NERDTreeShowBookmarks=1 "一直顯示書籤
+let  NERDTreeChDirMode=2 "打開書籤時，自動將Vim的pwd 設為打開的目錄，如果你的項目有tags文件，你會發現這個命令很有幫助
