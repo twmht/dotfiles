@@ -29,6 +29,7 @@ Bundle 'python_match.vim'
 Bundle 'vimwiki'
 Bundle 'python.vim'
 Bundle 'TabBar'
+Bundle 'tir_black'
 
 
 
