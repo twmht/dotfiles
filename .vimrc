@@ -15,6 +15,7 @@ Bundle 'Shougo/neocomplcache'
 Bundle 'Shougo/neocomplcache-snippets-complete'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'majutsushi/tagbar'
+Bundle 'tpope/vim-surround'
 " vim-scripts repos
 Bundle 'L9'
 Bundle 'FuzzyFinder'
@@ -149,6 +150,11 @@ autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
 autocmd FileType javascript setlocal omnifunc=javascriptcomplete#CompleteJS 
 autocmd FileType python setlocal omnifunc=pythoncomplete#Complete 
 autocmd FileType xml setlocal omnifunc=xmlcomplete#CompleteTags 
+"for java
+autocmd FileType java setlocal omnifunc=javacomplete#Complete
+autocmd FileType java setlocal completefunc=javacomplete#CompleteParamsInfo
+"Add other claspath
+let b:classpath="/home/mht/android-sdks/platforms/android-7/android.jar"
 " open the snippet
 imap <silent><C-l> <Plug>(neocomplcache_snippets_force_expand)
 smap <silent><C-l> <Plug>(neocomplcache_snippets_force_expand) 
