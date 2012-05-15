@@ -18,7 +18,7 @@ let g:fuf_mrucmd_maxItem = 400
 nnoremap <silent> <leader>sj     :FufBuffer<CR>
 nnoremap <silent> <leader>sk     :FufFileWithCurrentBufferDir<CR>
 nnoremap <silent> <leader>sK     :FufFileWithFullCwd<CR>
-nnoremap <silent> <leader>s<C-k> :FufFile<CR>
+nnoremap <silent> <leader>ff     :FufFile<CR>
 nnoremap <silent> <leader>sl     :FufCoverageFileChange<CR>
 nnoremap <silent> <leader>sL     :FufCoverageFileChange<CR>
 nnoremap <silent> <leader>s<C-l> :FufCoverageFileRegister<CR>
@@ -31,7 +31,7 @@ nnoremap <silent> <leader>sm     :FufMruCmd<CR>
 nnoremap <silent> <leader>su     :FufBookmarkFile<CR>
 nnoremap <silent> <leader>s<C-u> :FufBookmarkFileAdd<CR>
 vnoremap <silent> <leader>s<C-u> :FufBookmarkFileAddAsSelectedText<CR>
-nnoremap <silent> <leader>si     :FufBookmarkDir<CR>
+nnoremap <silent> <leader>bd     :FufBookmarkDir<CR>
 nnoremap <silent> <leader>s<C-i> :FufBookmarkDirAdd<CR>
 nnoremap <silent> <leader>st     :FufTag<CR>
 nnoremap <silent> <leader>sT     :FufTag!<CR>

@@ -31,6 +31,10 @@ Bundle 'tir_black'
 Bundle 'othree/html5-syntax.vim'
 Bundle 'pyflakes.vim'
 Bundle 'python-imports.vim'
+Bundle 'matchit.zip'
+Bundle 'python_match.vim'
+"Bundle 'AutoComplPop'
+"Bundle 'VimPdb'
 
 
 " My Bundles here:
@@ -54,6 +58,8 @@ set ofu=syntaxcomplete#Complete
 """Basic Mapping Settings(s)
 inoremap jj  <ESC>
 inoremap {<CR> {<CR><END><CR>}<UP><END>
+inoremap = <Space>=<Space>
+inoremap ( (<Space><Space>)<Left><Left>
 """press S to replace the current word with the last yanked text
 nnoremap S diw"0P
 vnoremap S "_d"0P
@@ -61,6 +67,9 @@ vnoremap S "_d"0P
 
 " remember last cursor position
 au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
+" " automatically open and close the popup menu / preview window
+au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
+set completeopt=menuone,menu,longest,preview
 
 """ Encoding Setting(s)
 set encoding=utf8
@@ -112,14 +121,6 @@ let g:Powerline_symbols = 'fancy'
 " " build tags of your own project with Ctrl-F12
 map <C-F12> :!ctags -R --sort=yes --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 
-
-" NERDTree
-let NERDTreeWinPos  =  "left"  "where NERD tree window is placed on the screen "
-let NERDTreeWinSize = 31 "size of the NERD tree
-let NERDChristmasTree=1
-"autocmd vimenter * NERDTree "  open a NERDTree automatically
-nnoremap <silent> <F6> :NERDTreeToggle<CR>
-let  NERDTreeShowBookmarks=1 "一直顯示書籤
-let  NERDTreeChDirMode=2 "打開書籤時，自動將Vim的pwd 設為打開的目錄，如果你的項目有tags文件，你會發現這個命令很有幫助
+source ~/.vim_plugin/NERDTree.vim
 source ~/.vim_plugin/neocomplcache.vim
 source ~/.vim_plugin/FuzzyFinder.vim
