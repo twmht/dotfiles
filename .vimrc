@@ -49,6 +49,9 @@ set nocompatible
 set cursorline
 set wildmenu
 set wildmode=list:longest,full
+set cursorcolumn 
+hi CursorLine cterm=none ctermbg=230 ctermfg=none guibg=darkred guifg=white 
+hi CursorColumn cterm=none ctermbg=230 ctermfg=none guibg=darkred guifg=white
 filetype on
 filetype plugin indent on
 syntax on
@@ -59,7 +62,9 @@ set ofu=syntaxcomplete#Complete
 inoremap jj  <ESC>
 inoremap {<CR> {<CR><END><CR>}<UP><END>
 inoremap = <Space>=<Space>
-inoremap ( (<Space><Space>)<Left><Left>
+inoremap == <Space>==<Space>
+inoremap != <Space>!=<Space>
+inoremap ( ()<Left>
 """press S to replace the current word with the last yanked text
 nnoremap S diw"0P
 vnoremap S "_d"0P
@@ -78,7 +83,7 @@ set fileencodings=utf-8,big5,euc-jp,gbk,euc-kr,utf-bom,iso8859-1
 set termencoding=utf-8
 
 """ Color Scheme Setting(s)
-colorscheme tir_black
+"colorscheme tir_black
 
 """ Backup Setting(s)
 "set backup
@@ -98,7 +103,6 @@ let g:pydiction_location = '~/.vim/bundle/Pydiction/complete-dict'
 
 """ tagbar settings
 nnoremap <silent> <F9> :TagbarToggle<CR>
-
 
 """ Folding Setting(s)
 set foldenable
