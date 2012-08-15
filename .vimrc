@@ -4,6 +4,7 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 " let Vundle manage Vundle
 " required! 
+Bundle 'mivok/vimtodo'
 Bundle 'gmarik/vundle'
 Bundle 'tpope/vim-fugitive'
 Bundle 'Lokaltog/vim-easymotion'
@@ -21,6 +22,9 @@ Bundle 'tpope/vim-surround'
 "Bundle 'snipmate-snippets'
 "Bundle 'garbas/vim-snipmate'
 " vim-scripts repos
+Bundle "sudo.vim"
+"(command line): vim sudo:/etc/passwd
+"(within vim):   :e sudo:/etc/passwd
 Bundle 'L9'
 Bundle 'FuzzyFinder'
 Bundle 'OmniCppComplete'
@@ -33,6 +37,7 @@ Bundle 'pyflakes.vim'
 Bundle 'python-imports.vim'
 Bundle 'matchit.zip'
 Bundle 'python_match.vim'
+Bundle 'Visual-Mark'
 "Bundle 'AutoComplPop'
 "Bundle 'VimPdb'
 
@@ -50,8 +55,10 @@ set cursorline
 set wildmenu
 set wildmode=list:longest,full
 set cursorcolumn 
-hi CursorLine cterm=none ctermbg=230 ctermfg=none guibg=darkred guifg=white 
-hi CursorColumn cterm=none ctermbg=230 ctermfg=none guibg=darkred guifg=white
+"set splitright
+"set splitbelow
+hi CursorLine cterm=none ctermbg=200 ctermfg=none guibg=darkred guifg=white 
+hi CursorColumn cterm=none ctermbg=200 ctermfg=none guibg=darkred guifg=white
 filetype on
 filetype plugin indent on
 syntax on
@@ -64,10 +71,25 @@ inoremap {<CR> {<CR><END><CR>}<UP><END>
 inoremap = <Space>=<Space>
 inoremap == <Space>==<Space>
 inoremap != <Space>!=<Space>
+inoremap <= <Space><=<Space>
+inoremap >= <Space>>=<Space>
 inoremap ( ()<Left>
 """press S to replace the current word with the last yanked text
 nnoremap S diw"0P
 vnoremap S "_d"0P
+"""indention
+vnoremap > >gv
+vnoremap < <gv
+nnoremap <Tab> >>_
+nnoremap <S-Tab> <<_
+inoremap <S-Tab> <C-D>
+vnoremap <Tab> >gv
+vnoremap <S-Tab> <gv
+vnoremap <Tab> >
+vnoremap <S-Tab> <
+vnoremap <Tab> >gV
+vnoremap <S-Tab> <gV
+nnoremap gg=G gg=G<C-O><C-O>
 
 
 " remember last cursor position
@@ -75,6 +97,7 @@ au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|
 " " automatically open and close the popup menu / preview window
 au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
 set completeopt=menuone,menu,longest,preview
+highlight Pmenu ctermbg = 238 gui = bold
 
 """ Encoding Setting(s)
 set encoding=utf8
@@ -128,3 +151,20 @@ map <C-F12> :!ctags -R --sort=yes --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 source ~/.vim_plugin/NERDTree.vim
 source ~/.vim_plugin/neocomplcache.vim
 source ~/.vim_plugin/FuzzyFinder.vim
+
+"fun! Runcmd(cmd)
+    "silent! exe "noautocmd botright pedit ".a:cmd
+    "noautocmd wincmd P
+    "set buftype=nofile
+    "exe "noautocmd r! ".a:cmd
+    "noautocmd wincmd p
+"endfun
+"com! -nargs=1 Runcmd :call Runcmd("<args>")
+" Make sure Vim returns to the same line when you reopen a file.
+augroup line_return
+    au!
+    au BufReadPost *
+        \ if line("'\"") > 0 && line("'\"") <= line("$") |
+        \     execute 'normal! g`"zvzz' |
+        \ endif
+augroup END

@@ -25,7 +25,7 @@ function! HasError(qflist)
 endfunction
 
 function! MakeAndRun()
-    make
+    make f=%
     if HasError( getqflist() )
         cl
     else
@@ -33,7 +33,17 @@ function! MakeAndRun()
     endif
 endfunction
 
+function! MakeAndRunAndTest()
+    make f=%
+    if HasError( getqflist() )
+        cl
+    else
+        !./a.out < test
+    endif
+endfunction
+
 map <F5> :w<CR>:call MakeAndRun()<CR>
+map <C-F5> :w<CR>:call MakeAndRunAndTest()<CR>
 " next position in quicklist
 map <C-N> :cn<CR> 
 " previous position in quicklist
