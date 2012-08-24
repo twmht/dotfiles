@@ -16,12 +16,8 @@ Bundle 'Shougo/neocomplcache-snippets-complete'
 Bundle 'scrooloose/nerdcommenter'
 Bundle 'majutsushi/tagbar'
 Bundle 'tpope/vim-surround'
-"Bundle 'cespare/vjde'
-"Bundle 'MarcWeber/vim-addon-mw-utils'
-"Bundle 'tomtom/tlib_vim'
-"Bundle 'snipmate-snippets'
-"Bundle 'garbas/vim-snipmate'
 " vim-scripts repos
+Bundle "sessionman.vim"
 Bundle "sudo.vim"
 "(command line): vim sudo:/etc/passwd
 "(within vim):   :e sudo:/etc/passwd
@@ -34,12 +30,10 @@ Bundle 'TabBar'
 Bundle 'tir_black'
 Bundle 'othree/html5-syntax.vim'
 Bundle 'pyflakes.vim'
-Bundle 'python-imports.vim'
-Bundle 'matchit.zip'
-Bundle 'python_match.vim'
 Bundle 'Visual-Mark'
 "Bundle 'AutoComplPop'
 "Bundle 'VimPdb'
+Bundle 'mbbill/echofunc'
 
 
 " My Bundles here:
@@ -152,14 +146,6 @@ source ~/.vim_plugin/NERDTree.vim
 source ~/.vim_plugin/neocomplcache.vim
 source ~/.vim_plugin/FuzzyFinder.vim
 
-"fun! Runcmd(cmd)
-    "silent! exe "noautocmd botright pedit ".a:cmd
-    "noautocmd wincmd P
-    "set buftype=nofile
-    "exe "noautocmd r! ".a:cmd
-    "noautocmd wincmd p
-"endfun
-"com! -nargs=1 Runcmd :call Runcmd("<args>")
 " Make sure Vim returns to the same line when you reopen a file.
 augroup line_return
     au!
