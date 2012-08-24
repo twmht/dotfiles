@@ -27,6 +27,7 @@ endfunction
 function! MakeAndRun()
     exe 'make -C '.b:filepath.' f='.b:filename
     if HasError( getqflist() )
+        "echo printf("Have %d errors", len(getqflist()))
         cl
     else
         "!./a.out
