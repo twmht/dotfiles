@@ -33,7 +33,7 @@ Bundle 'pyflakes.vim'
 Bundle 'Visual-Mark'
 "Bundle 'AutoComplPop'
 "Bundle 'VimPdb'
-Bundle 'mbbill/echofunc'
+"Bundle 'mbbill/echofunc'
 
 
 " My Bundles here:
