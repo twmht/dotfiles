@@ -31,7 +31,7 @@ Bundle 'tir_black'
 Bundle 'othree/html5-syntax.vim'
 Bundle 'pyflakes.vim'
 Bundle 'Visual-Mark'
-"Bundle 'AutoComplPop'
+Bundle 'AutoComplPop'
 "Bundle 'VimPdb'
 "Bundle 'mbbill/echofunc'
 
