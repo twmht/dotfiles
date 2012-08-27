@@ -7,7 +7,7 @@ let col = col('.') - 1
 return !col || getline('.')[col - 1] =~ '\s'
 endfunction"}}
 " Disable AutoComplPop.
-let g:acp_enableAtStartup = 0
+"let g:acp_enableAtStartup = 0
 " Use neocomplcache.
 let g:neocomplcache_enable_at_startup = 1
 " Use smartcase.
