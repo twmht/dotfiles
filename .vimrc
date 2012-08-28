@@ -36,6 +36,8 @@ Bundle 'Visual-Mark'
 "Bundle 'mbbill/echofunc'
 
 
+"for python.vim
+let python_highlight_all = 1
 " My Bundles here:
 
 """ Basic Setting(s)
@@ -100,7 +102,7 @@ set fileencodings=utf-8,big5,euc-jp,gbk,euc-kr,utf-bom,iso8859-1
 set termencoding=utf-8
 
 """ Color Scheme Setting(s)
-"colorscheme tir_black
+colorscheme wombat256
 
 """ Backup Setting(s)
 "set backup
