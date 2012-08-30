@@ -33,9 +33,17 @@ Bundle 'pyflakes.vim'
 Bundle 'Visual-Mark'
 "Bundle 'AutoComplPop'
 "Bundle 'VimPdb'
-Bundle 'mbbill/echofunc'
+"Bundle 'mbbill/echofunc'
+if match($TERM, "screen")!=-1
+  set term=xterm
+endif
+" Screen-ify an external command.
+function InScreen(command)
+  return g:GNU_Screen_used ? 'screen '.a:command : a:command
+endfunction
 
-
+"for python.vim
+let python_highlight_all = 1
 " My Bundles here:
 
 """ Basic Setting(s)
@@ -100,7 +108,7 @@ set fileencodings=utf-8,big5,euc-jp,gbk,euc-kr,utf-bom,iso8859-1
 set termencoding=utf-8
 
 """ Color Scheme Setting(s)
-"colorscheme tir_black
+colorscheme wombat256
 
 """ Backup Setting(s)
 "set backup
