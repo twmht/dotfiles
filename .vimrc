@@ -33,7 +33,8 @@ Bundle 'pyflakes.vim'
 Bundle 'Visual-Mark'
 "Bundle 'AutoComplPop'
 "Bundle 'VimPdb'
-"Bundle 'mbbill/echofunc'
+Bundle 'mbbill/echofunc'
+Bundle 'ervandew/supertab'
 if match($TERM, "screen")!=-1
   set term=xterm
 endif
@@ -153,6 +154,7 @@ map <C-F12> :!ctags -R --sort=yes --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 source ~/.vim_plugin/NERDTree.vim
 source ~/.vim_plugin/neocomplcache.vim
 source ~/.vim_plugin/FuzzyFinder.vim
+source ~/.vim_plugin/supertab.vim
 
 " Make sure Vim returns to the same line when you reopen a file.
 augroup line_return
