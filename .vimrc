@@ -34,7 +34,8 @@ Bundle 'Visual-Mark'
 "Bundle 'ervandew/supertab'
 "Bundle 'AutoComplPop'
 "Bundle 'VimPdb'
-"Bundle 'mbbill/echofunc'
+Bundle 'mbbill/echofunc'
+Bundle 'ervandew/supertab'
 if match($TERM, "screen")!=-1
   set term=xterm
 endif
