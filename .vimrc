@@ -8,7 +8,6 @@ Bundle 'mivok/vimtodo'
 Bundle 'gmarik/vundle'
 Bundle 'tpope/vim-fugitive'
 Bundle 'Lokaltog/vim-easymotion'
-Bundle 'scrooloose/nerdtree'
 Bundle 'Twinside/vim-cuteErrorMarker'
 Bundle 'Lokaltog/vim-powerline'
 Bundle 'Shougo/neocomplcache'
@@ -27,15 +26,12 @@ Bundle 'OmniCppComplete'
 Bundle 'Pydiction'
 Bundle 'indent-motion'
 Bundle 'TabBar'
-Bundle 'tir_black'
 Bundle 'othree/html5-syntax.vim'
 Bundle 'pyflakes.vim'
 Bundle 'Visual-Mark'
-"Bundle 'ervandew/supertab'
-"Bundle 'AutoComplPop'
-"Bundle 'VimPdb'
 Bundle 'mbbill/echofunc'
 Bundle 'ervandew/supertab'
+Bundle 'LaTeX-Box-Team/LaTeX-Box'
 if match($TERM, "screen")!=-1
   set term=xterm
 endif
@@ -124,9 +120,7 @@ set expandtab
 set shiftwidth=4
 set tabstop=4
 set softtabstop=4
-"""for python
 "autocmd FileType python set complete+=k~/.vim/syntax/python.vim isk+=.,(
-let g:pydiction_location = '~/.vim/bundle/Pydiction/complete-dict'
 
 """ tagbar settings
 nnoremap <silent> <F9> :TagbarToggle<CR>
@@ -152,10 +146,9 @@ let g:Powerline_symbols = 'fancy'
 " " build tags of your own project with Ctrl-F12
 map <C-F12> :!ctags -R --sort=yes --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 
-source ~/.vim_plugin/NERDTree.vim
+source ~/.vim_plugin/supertab.vim
 source ~/.vim_plugin/neocomplcache.vim
 source ~/.vim_plugin/FuzzyFinder.vim
-source ~/.vim_plugin/supertab.vim
 
 " Make sure Vim returns to the same line when you reopen a file.
 augroup line_return
