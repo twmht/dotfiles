@@ -23,7 +23,7 @@ Bundle "sudo.vim"
 Bundle 'L9'
 Bundle 'FuzzyFinder'
 Bundle 'OmniCppComplete'
-Bundle 'Pydiction'
+"Bundle 'Pydiction'
 Bundle 'indent-motion'
 Bundle 'TabBar'
 Bundle 'othree/html5-syntax.vim'
