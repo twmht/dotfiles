@@ -1,3 +1,4 @@
+let python_highlight_all = 1
 let g:pydiction_location = '~/.vim/bundle/Pydiction/complete-dict'
 set foldmethod=indent
 set foldlevel=99

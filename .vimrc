@@ -31,7 +31,7 @@ Bundle 'pyflakes.vim'
 Bundle 'Visual-Mark'
 Bundle 'mbbill/echofunc'
 Bundle 'ervandew/supertab'
-Bundle 'LaTeX-Box-Team/LaTeX-Box'
+"Bundle 'LaTeX-Box-Team/LaTeX-Box'
 if match($TERM, "screen")!=-1
   set term=xterm
 endif
@@ -40,9 +40,6 @@ function InScreen(command)
   return g:GNU_Screen_used ? 'screen '.a:command : a:command
 endfunction
 
-"for python.vim
-let python_highlight_all = 1
-" My Bundles here:
 
 """ Basic Setting(s)
 let mapleader = ","
