@@ -30,8 +30,6 @@ Bundle 'othree/html5-syntax.vim'
 Bundle 'pyflakes.vim'
 Bundle 'Visual-Mark'
 Bundle 'mbbill/echofunc'
-"Bundle 'ervandew/supertab'
-"Bundle 'LaTeX-Box-Team/LaTeX-Box'
 if match($TERM, "screen")!=-1
   set term=xterm
 endif
