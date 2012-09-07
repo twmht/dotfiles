@@ -1,3 +1,5 @@
+let python_highlight_all = 1
+"let g:pydiction_location = '~/.vim/bundle/Pydiction/complete-dict'
 set foldmethod=indent
 set foldlevel=99
 "type :make to get the syntax errors, use :cnext, to move to next error
