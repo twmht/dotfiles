@@ -30,7 +30,7 @@ Bundle 'othree/html5-syntax.vim'
 Bundle 'pyflakes.vim'
 Bundle 'Visual-Mark'
 Bundle 'mbbill/echofunc'
-Bundle 'ervandew/supertab'
+"Bundle 'ervandew/supertab'
 "Bundle 'LaTeX-Box-Team/LaTeX-Box'
 if match($TERM, "screen")!=-1
   set term=xterm
@@ -143,7 +143,7 @@ let g:Powerline_symbols = 'fancy'
 " " build tags of your own project with Ctrl-F12
 map <C-F12> :!ctags -R --sort=yes --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 
-source ~/.vim_plugin/supertab.vim
+"source ~/.vim_plugin/supertab.vim
 source ~/.vim_plugin/neocomplcache.vim
 source ~/.vim_plugin/FuzzyFinder.vim
 
