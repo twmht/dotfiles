@@ -1,4 +1,5 @@
 " vundle
+"set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
@@ -27,9 +28,9 @@ Bundle 'OmniCppComplete'
 Bundle 'indent-motion'
 Bundle 'TabBar'
 Bundle 'othree/html5-syntax.vim'
-Bundle 'pyflakes.vim'
+"Bundle 'pyflakes.vim'
 Bundle 'Visual-Mark'
-Bundle 'mbbill/echofunc'
+"Bundle 'mbbill/echofunc'
 if match($TERM, "screen")!=-1
   set term=xterm
 endif

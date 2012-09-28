@@ -15,6 +15,7 @@ map<buffer> <C-P> :cp<CR>
 setlocal tabstop=4
 setlocal nowrap
 setlocal go+=b
+inoremap # X<C-H>#
 
 """quick list setting
 " Do make with different makeprg settings.
