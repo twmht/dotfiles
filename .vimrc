@@ -18,7 +18,7 @@ Bundle 'majutsushi/tagbar'
 Bundle 'tpope/vim-surround'
 " vim-scripts repos
 Bundle "sessionman.vim"
-Bundle "sudo.vim"
+Bundle "HTML-AutoCloseTag"
 "(command line): vim sudo:/etc/passwd
 "(within vim):   :e sudo:/etc/passwd
 Bundle 'L9'
