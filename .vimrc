@@ -5,7 +5,6 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#rc()
 " let Vundle manage Vundle
 " required! 
-Bundle 'mivok/vimtodo'
 Bundle 'gmarik/vundle'
 Bundle 'tpope/vim-fugitive'
 Bundle 'Lokaltog/vim-easymotion'
@@ -31,6 +30,7 @@ Bundle 'othree/html5-syntax.vim'
 "Bundle 'pyflakes.vim'
 Bundle 'Visual-Mark'
 "Bundle 'mbbill/echofunc'
+Bundle 'matchit.zip'
 if match($TERM, "screen")!=-1
   set term=xterm
 endif
