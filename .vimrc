@@ -16,7 +16,8 @@ Bundle 'scrooloose/nerdcommenter'
 Bundle 'majutsushi/tagbar'
 Bundle 'tpope/vim-surround'
 " vim-scripts repos
-Bundle "sessionman.vim"
+Bundle 'SQLComplete.vim'
+Bundle 'dbext.vim'
 Bundle "HTML-AutoCloseTag"
 "(command line): vim sudo:/etc/passwd
 "(within vim):   :e sudo:/etc/passwd
