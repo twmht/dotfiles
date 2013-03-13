@@ -19,8 +19,6 @@ Bundle 'tpope/vim-surround'
 Bundle 'SQLComplete.vim'
 Bundle 'dbext.vim'
 Bundle "HTML-AutoCloseTag"
-"(command line): vim sudo:/etc/passwd
-"(within vim):   :e sudo:/etc/passwd
 Bundle 'L9'
 Bundle 'FuzzyFinder'
 Bundle 'OmniCppComplete'
@@ -32,6 +30,7 @@ Bundle 'othree/html5-syntax.vim'
 Bundle 'Visual-Mark'
 "Bundle 'mbbill/echofunc'
 Bundle 'matchit.zip'
+Bundle 'airblade/vim-gitgutter'
 if match($TERM, "screen")!=-1
   set term=xterm
 endif
