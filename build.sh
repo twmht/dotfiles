@@ -6,6 +6,7 @@ mkdir -p ~/.vim_plugin
 ln -s ~/vimrc/.vim_plugin/FuzzyFinder.vim ~/.vim_plugin/FuzzyFinder.vim
 ln -s ~/vimrc/.vim_plugin/neocomplcache.vim ~/.vim_plugin/neocomplcache.vim
 ln -s ~/vimrc/.vim_plugin/dbext.vim ~/.vim_plugin/dbext.vim
+ln -s ~/vimrc/.vim_plugin/tabline.vim ~/.vim_plugin/tabline.vim
 cp -r ~/vimrc/colors ~/.vim
 mkdir -p ~/.vim/ftplugin
 ln -s ~/vimrc/ftplugin/c_.vim ~/.vim/ftplugin/c_.vim

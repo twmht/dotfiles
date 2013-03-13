@@ -26,7 +26,7 @@ Bundle 'FuzzyFinder'
 Bundle 'OmniCppComplete'
 "Bundle 'Pydiction'
 Bundle 'indent-motion'
-Bundle 'TabBar'
+"Bundle 'TabBar'
 Bundle 'othree/html5-syntax.vim'
 "Bundle 'pyflakes.vim'
 Bundle 'Visual-Mark'
@@ -148,6 +148,8 @@ map <C-F12> :!ctags -R --sort=yes --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 "source ~/.vim_plugin/supertab.vim
 source ~/.vim_plugin/neocomplcache.vim
 source ~/.vim_plugin/FuzzyFinder.vim
+source ~/.vim_plugin/dbext.vim
+source ~/.vim_plugin/tabline.vim
 
 " Make sure Vim returns to the same line when you reopen a file.
 augroup line_return
