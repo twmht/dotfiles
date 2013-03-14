@@ -147,6 +147,7 @@ map <C-F12> :!ctags -R --sort=yes --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 
 "for dbext
 let g:dbext_default_profile_mysql_local = 'type=MYSQL:user=root:passwd=gm2547881:dbname=library'
+map <leader>l :DBListTable<CR>
 "for FuzzyFinder
 nnoremap <silent> <leader>ff     :FufFile<CR>
 nnoremap <silent> <leader>bb     :FufBuffer<CR>
