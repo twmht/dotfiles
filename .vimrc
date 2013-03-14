@@ -31,6 +31,7 @@ Bundle 'Visual-Mark'
 "Bundle 'mbbill/echofunc'
 Bundle 'matchit.zip'
 Bundle 'airblade/vim-gitgutter'
+Bundle 'bootleq/vim-tabline'
 if match($TERM, "screen")!=-1
   set term=xterm
 endif

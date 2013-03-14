@@ -1,6 +1,7 @@
 #!/bin/bash
 mkdir -p ~/.vim
 mkdir -p ~/.vim/bundle && git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vundle
+git clone https://github.com/gmarik/vundle.git ~/.vim/bundle/vim-tabline
 ln -s ~/vimrc/.vimrc ~/.vimrc
 mkdir -p ~/.vim_plugin
 cp -r ~/vimrc/colors ~/.vim
