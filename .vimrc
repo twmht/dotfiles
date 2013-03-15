@@ -32,6 +32,7 @@ Bundle 'Visual-Mark'
 Bundle 'matchit.zip'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'bootleq/vim-tabline'
+Bundle 'fholgado/minibufexpl.vim'
 if match($TERM, "screen")!=-1
   set term=xterm
 endif
