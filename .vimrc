@@ -152,7 +152,7 @@ map <leader>l :DBListTable<CR>
 "for FuzzyFinder
 nnoremap <silent> <leader>ff     :FufFile<CR>
 nnoremap <silent> <leader>bb     :FufBuffer<CR>
-nnoremap <silent> <leader>sk     :FufFileWithCurrentBufferDir<CR>
+nnoremap <silent> <leader>bf     :FufFileWithCurrentBufferDir<CR>
 """for neocomplcache
 
 "Popup on <TAB>
