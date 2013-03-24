@@ -228,7 +228,7 @@ let g:neocomplcache_omni_patterns.cpp = '\h\w*\%(\.\|->\)\h\w*\|\h\w*::'
 
 """end for neocomplcache
 
-"""for minibufexpl
+"""for TagmaBufMgr
 nnoremap bn1 :buffer 1<cr>
 nnoremap bn2 :buffer 2<cr>
 nnoremap bn3 :buffer 3<cr>
@@ -238,6 +238,9 @@ nnoremap bn6 :buffer 6<cr>
 nnoremap bn7 :buffer 7<cr>
 nnoremap bn8 :buffer 8<cr>
 nnoremap bn9 :buffer 9<cr>
+let g:TagmaBufMgrLastWindow = 1
+let g:TagmaBufMgrMapChjklbuf = 1
+let g:TagmaBufMgrMapChjkl = 0
 
 " Make sure Vim returns to the same line when you reopen a file.
 augroup line_return
