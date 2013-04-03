@@ -19,8 +19,6 @@ Bundle 'tpope/vim-surround'
 Bundle 'SQLComplete.vim'
 Bundle 'dbext.vim'
 Bundle "HTML-AutoCloseTag"
-Bundle 'L9'
-Bundle 'FuzzyFinder'
 Bundle 'OmniCppComplete'
 "Bundle 'Pydiction'
 Bundle 'indent-motion'
@@ -94,7 +92,8 @@ nnoremap gg=G gg=G<C-O><C-O>
 au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|else|exe "norm $"|endif|endif
 " " automatically open and close the popup menu / preview window
 au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
-set completeopt=menuone,menu,longest,preview
+"set completeopt=menuone,menu,longest,preview
+set completeopt=menuone,menu,longest
 highlight Pmenu ctermbg = 238 gui = bold
 
 """ Encoding Setting(s)
@@ -149,10 +148,6 @@ map <C-F12> :!ctags -R --sort=yes --c++-kinds=+p --fields=+iaS --extra=+q .<CR>
 "for dbext
 let g:dbext_default_profile_mysql_local = 'type=MYSQL:user=root:passwd=gm2547881:dbname=library'
 map <leader>l :DBListTable<CR>
-"for FuzzyFinder
-nnoremap <silent> <leader>ff     :FufFile<CR>
-nnoremap <silent> <leader>bb     :FufBuffer<CR>
-nnoremap <silent> <leader>bf     :FufFileWithCurrentBufferDir<CR>
 """for neocomplcache
 
 "Popup on <TAB>
@@ -208,6 +203,7 @@ inoremap <expr><BS> neocomplcache#smart_close_popup()."\<C-h>"
 inoremap <expr><C-e>  neocomplcache#cancel_popup()
 """this line should below line number-41, or it is useless
 imap <expr><CR> neocomplcache#sources#snippets_complete#expandable() ? "\<Plug>(neocomplcache_snippets_expand)" : pumvisible() ? neocomplcache#smart_close_popup() : "\<CR>"
+let g:neocomplcache_enable_auto_close_preview = 1
 " Enable omni completion.
 autocmd FileType css setlocal omnifunc=csscomplete#CompleteCSS
 autocmd FileType html,markdown setlocal omnifunc=htmlcomplete#CompleteTags
@@ -238,7 +234,6 @@ nnoremap bn6 :buffer 6<cr>
 nnoremap bn7 :buffer 7<cr>
 nnoremap bn8 :buffer 8<cr>
 nnoremap bn9 :buffer 9<cr>
-let g:TagmaBufMgrLastWindow = 1
 let g:TagmaBufMgrMapChjklbuf = 1
 let g:TagmaBufMgrMapChjkl = 0
 
