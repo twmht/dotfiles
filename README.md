@@ -3,7 +3,7 @@ vimrc
 
 my vimrc settings
 
-First，Download my vimrc settings:  
+First，Download my vimrc settings in your home directory:  
 ```
 git clone https://github.com/twmht/vimrc.git
 ```
