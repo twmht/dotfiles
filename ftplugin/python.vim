@@ -13,7 +13,6 @@ map<buffer> <C-P> :cp<CR>
 "That will make to use a 4 spaces for you tabstop (only visually), it avoids
 "wrapping your code and will add a bottom scrollbar
 setlocal tabstop=4
-setlocal nowrap
 setlocal go+=b
 inoremap # X<C-H>#
 

@@ -48,6 +48,9 @@ set wildmenu
 set wildmode=list:longest,full
 set cursorcolumn 
 set backspace=2
+set wrap
+set linebreak
+set nolist
 filetype on
 filetype plugin indent on
 syntax on
@@ -162,9 +165,10 @@ augroup line_return
 augroup END
 
 """for ycm
-let g:ycm_global_ycm_extra_conf = '~/.vim2/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py'
+let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py'
+let g:ycm_complete_in_comments_and_strings = 1
 """for ultisnips
-let g:UltiSnipsExpandTrigger = '<cr>'
+let g:UltiSnipsExpandTrigger = '<c-e>'
 let g:UltiSnipsJumpForwardTrigger='<c-j>'
 let g:UltiSnipsJumpBackwardTrigger='<c-k>'
 
