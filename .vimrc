@@ -16,7 +16,8 @@ Bundle 'tpope/vim-surround'
 " vim-scripts repos
 Bundle 'SQLComplete.vim'
 Bundle 'dbext.vim'
-Bundle "HTML-AutoCloseTag"
+"Bundle 'HTML-AutoCloseTag'
+Bundle 'MartinLafreniere/vim-PairTools'
 Bundle 'indent-motion'
 Bundle 'othree/html5-syntax.vim'
 Bundle 'Visual-Mark'
@@ -27,6 +28,8 @@ Bundle 'LStinson/TagmaBufMgr'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'scrooloose/syntastic'
 Bundle 'SirVer/ultisnips'
+Bundle 'mattn/zencoding-vim'
+Bundle 'javacomplete'
 if match($TERM, "screen")!=-1
   set term=xterm
 endif
@@ -174,3 +177,4 @@ let g:UltiSnipsJumpBackwardTrigger='<c-k>'
 
 """for eclim
 let g:EclimCompletionMethod = 'omnifunc'
+let g:pairtools_samplefile_path = '/home/mht/'
