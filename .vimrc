@@ -1,4 +1,4 @@
-" vundle
+ 
 "set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/vundle/
@@ -178,3 +178,11 @@ let g:UltiSnipsJumpBackwardTrigger='<c-k>'
 """for eclim
 let g:EclimCompletionMethod = 'omnifunc'
 let g:pairtools_samplefile_path = '/home/mht/'
+nnoremap ,i :call Indent_after_insert()<CR>
+"""for indent motion
+function! Indent_after_insert()
+    let ind = indent('.')
+    normal ,]o
+    execute 'normal! ' . ind . 'a '
+    startinsert!
+endfunction
