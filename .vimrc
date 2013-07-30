@@ -29,7 +29,6 @@ Bundle 'Valloric/YouCompleteMe'
 Bundle 'scrooloose/syntastic'
 Bundle 'SirVer/ultisnips'
 Bundle 'mattn/zencoding-vim'
-Bundle 'javacomplete'
 if match($TERM, "screen")!=-1
   set term=xterm
 endif
