@@ -8,7 +8,6 @@ mkdir -p ~/.vim/ftplugin
 ln -s ~/vimrc/ftplugin/c_.vim ~/.vim/ftplugin/c_.vim
 ln -s ~/vimrc/ftplugin/python.vim ~/.vim/ftplugin/python.vim
 ln -s ~/vimrc/ftplugin/xml.vim ~/.vim/ftplugin/xml.vim
-ln -s ~/vimrc/ftplugin/java.vim ~/.vim/ftplugin/java.vim
 cp -r ~/vimrc/syntax ~/.vim/
 cp ~/vimrc/.screenrc ~/.screenrc
 mkdir -p ~/.fonts && cd ~/.fonts/ && git clone https://github.com/scotu/ubuntu-mono-powerline.git && cd ~
