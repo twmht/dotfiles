@@ -22,7 +22,7 @@ Bundle 'indent-motion'
 Bundle 'othree/html5-syntax.vim'
 Bundle 'Visual-Mark'
 "Bundle 'mbbill/echofunc'
-Bundle 'matchit.zip'
+Bundle 'mtth/locate.vim'
 Bundle 'airblade/vim-gitgutter'
 Bundle 'LStinson/TagmaBufMgr'
 Bundle 'Valloric/YouCompleteMe'
@@ -121,6 +121,8 @@ set softtabstop=4
 
 """ tagbar settings
 nnoremap <silent> <F9> :TagbarToggle<CR>
+let g:tagbar_autofocus = 1
+let g:tagbar_autoclose = 1
 
 """ Folding Setting(s)
 set foldenable
