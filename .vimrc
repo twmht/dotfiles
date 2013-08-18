@@ -107,8 +107,8 @@ colorscheme wombat256
 "set backup
 "set backupdir=$HOME/.vim/backup
 set nobackup
-"""html settings
-"au FileType xhtml,xml so ~/.vim/ftplugin/html_autoclosetag.vim
+"gnuplot
+au BufNewFile,BufRead *.gnu set filetype=gnuplot
 
 """ Indent Setting(s)
 set autoindent
