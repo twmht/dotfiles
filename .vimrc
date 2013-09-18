@@ -29,6 +29,7 @@ Bundle 'Valloric/YouCompleteMe'
 Bundle 'scrooloose/syntastic'
 Bundle 'SirVer/ultisnips'
 Bundle 'mattn/zencoding-vim'
+Bundle 'nanotech/jellybeans.vim'
 if match($TERM, "screen")!=-1
   set term=xterm
 endif
@@ -101,7 +102,8 @@ set fileencodings=utf-8,big5,euc-jp,gbk,euc-kr,utf-bom,iso8859-1
 set termencoding=utf-8
 
 """ Color Scheme Setting(s)
-colorscheme wombat256
+"colorscheme wombat256
+colorscheme jellybeans
 
 """ Backup Setting(s)
 "set backup
