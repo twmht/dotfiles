@@ -28,7 +28,7 @@ Bundle 'LStinson/TagmaBufMgr'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'scrooloose/syntastic'
 Bundle 'SirVer/ultisnips'
-Bundle 'mattn/zencoding-vim'
+Bundle 'mattn/emmet-vim'
 Bundle 'nanotech/jellybeans.vim'
 if match($TERM, "screen")!=-1
   set term=xterm
