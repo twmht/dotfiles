@@ -30,6 +30,7 @@ Bundle 'scrooloose/syntastic'
 Bundle 'SirVer/ultisnips'
 Bundle 'mattn/emmet-vim'
 Bundle 'nanotech/jellybeans.vim'
+Bundle 'nerdtree'
 if match($TERM, "screen")!=-1
   set term=xterm
 endif
@@ -189,3 +190,7 @@ function! Indent_after_insert()
     execute 'normal! ' . ind . 'a '
     startinsert!
 endfunction
+
+"""for nerdtree
+autocmd StdinReadPre * let s:std_in=1
+autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
