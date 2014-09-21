@@ -2,35 +2,38 @@
 "set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/vundle/
-call vundle#rc()
+call vundle#begin()
 " let Vundle manage Vundle
 " required! 
-Bundle 'gmarik/vundle'
-Bundle 'tpope/vim-fugitive'
-Bundle 'Lokaltog/vim-easymotion'
-Bundle 'Twinside/vim-cuteErrorMarker'
-Bundle 'Lokaltog/vim-powerline'
-Bundle 'scrooloose/nerdcommenter'
-Bundle 'majutsushi/tagbar'
-Bundle 'tpope/vim-surround'
+Plugin 'gmarik/vundle'
+Plugin 'tpope/vim-fugitive'
+Plugin 'Lokaltog/vim-easymotion'
+Plugin 'Twinside/vim-cuteErrorMarker'
+Plugin 'Lokaltog/vim-powerline'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'majutsushi/tagbar'
+Plugin 'tpope/vim-surround'
 " vim-scripts repos
-Bundle 'SQLComplete.vim'
-Bundle 'dbext.vim'
-"Bundle 'HTML-AutoCloseTag'
-Bundle 'MartinLafreniere/vim-PairTools'
-Bundle 'indent-motion'
-Bundle 'othree/html5-syntax.vim'
-Bundle 'Visual-Mark'
-"Bundle 'mbbill/echofunc'
-Bundle 'mtth/locate.vim'
-Bundle 'airblade/vim-gitgutter'
-Bundle 'LStinson/TagmaBufMgr'
-Bundle 'Valloric/YouCompleteMe'
-Bundle 'scrooloose/syntastic'
-Bundle 'SirVer/ultisnips'
-Bundle 'mattn/emmet-vim'
-Bundle 'nanotech/jellybeans.vim'
-Bundle 'nerdtree'
+Plugin 'SQLComplete.vim'
+Plugin 'dbext.vim'
+"Plugin 'HTML-AutoCloseTag'
+Plugin 'MartinLafreniere/vim-PairTools'
+Plugin 'indent-motion'
+Plugin 'othree/html5-syntax.vim'
+Plugin 'Visual-Mark'
+"Plugin 'mbbill/echofunc'
+Plugin 'mtth/locate.vim'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'LStinson/TagmaBufMgr'
+Plugin 'Valloric/YouCompleteMe'
+Plugin 'scrooloose/syntastic'
+Plugin 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
+Plugin 'mattn/emmet-vim'
+Plugin 'nanotech/jellybeans.vim'
+Plugin 'scrooloose/nerdtree'
+call vundle#end()            " required
+
 if match($TERM, "screen")!=-1
   set term=xterm
 endif
@@ -112,6 +115,7 @@ colorscheme jellybeans
 set nobackup
 "gnuplot
 au BufNewFile,BufRead *.gnu set filetype=gnuplot
+au BufNewFile,BufRead *.gradle set filetype=groovy
 
 """ Indent Setting(s)
 set autoindent
@@ -172,7 +176,8 @@ augroup line_return
 augroup END
 
 """for ycm
-let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py'
+"let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py'
+let g:ycm_global_ycm_extra_conf ='.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 let g:ycm_complete_in_comments_and_strings = 1
 """for ultisnips
 let g:UltiSnipsExpandTrigger = '<c-e>'
