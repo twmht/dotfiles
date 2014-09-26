@@ -14,8 +14,8 @@ Plugin 'scrooloose/nerdcommenter'
 Plugin 'majutsushi/tagbar'
 Plugin 'tpope/vim-surround'
 " vim-scripts repos
-Plugin 'SQLComplete.vim'
-Plugin 'dbext.vim'
+"Plugin 'SQLComplete.vim'
+"Plugin 'dbext.vim'
 "Plugin 'HTML-AutoCloseTag'
 Plugin 'MartinLafreniere/vim-PairTools'
 Plugin 'indent-motion'
@@ -24,14 +24,17 @@ Plugin 'Visual-Mark'
 "Plugin 'mbbill/echofunc'
 Plugin 'mtth/locate.vim'
 Plugin 'airblade/vim-gitgutter'
-Plugin 'LStinson/TagmaBufMgr'
+"Plugin 'LStinson/TagmaBufMgr'
+Plugin 'bling/vim-bufferline'
 Plugin 'Valloric/YouCompleteMe'
-Plugin 'scrooloose/syntastic'
+"Plugin 'scrooloose/syntastic'
 Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'mattn/emmet-vim'
 Plugin 'nanotech/jellybeans.vim'
 Plugin 'scrooloose/nerdtree'
+Plugin 'vim-airline'
+Plugin 'cilquirm/javacomplete'
 call vundle#end()            " required
 
 if match($TERM, "screen")!=-1
@@ -142,29 +145,17 @@ set showcmd
 set incsearch
 set showmatch
 "set hlsearch
-map <F8> :set hls! < Bar> set hls?<CR>
+map <F8> :set hls! <Bar> set hls?<CR>
 """ Status Bar Setting(s)
 set t_Co=256 " Explicitly tell vim that the terminal supports 256 colors
 set laststatus=2 
 let g:Powerline_symbols = 'fancy'
 
 
-"for dbext
-let g:dbext_default_profile_mysql_local = 'type=MYSQL:user=root:passwd=xxxx:dbname=library'
-map <leader>l :DBListTable<CR>
+"for dbext and SQLComplete
+"let g:dbext_default_profile_mysql_local = 'type=MYSQL:user=root:passwd=xxxx:dbname=library'
+"map <leader>l :DBListTable<CR>
 
-"""for TagmaBufMgr
-nnoremap bn1 :buffer 1<cr>
-nnoremap bn2 :buffer 2<cr>
-nnoremap bn3 :buffer 3<cr>
-nnoremap bn4 :buffer 4<cr>
-nnoremap bn5 :buffer 5<cr>
-nnoremap bn6 :buffer 6<cr>
-nnoremap bn7 :buffer 7<cr>
-nnoremap bn8 :buffer 8<cr>
-nnoremap bn9 :buffer 9<cr>
-let g:TagmaBufMgrMapChjklbuf = 1
-let g:TagmaBufMgrMapChjkl = 0
 
 " Make sure Vim returns to the same line when you reopen a file.
 augroup line_return
@@ -176,7 +167,6 @@ augroup line_return
 augroup END
 
 """for ycm
-"let g:ycm_global_ycm_extra_conf = '~/.vim/bundle/YouCompleteMe/cpp/ycm/.ycm_extra_conf.py'
 let g:ycm_global_ycm_extra_conf ='~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
 let g:ycm_complete_in_comments_and_strings = 1
 """for ultisnips
@@ -185,8 +175,8 @@ let g:UltiSnipsJumpForwardTrigger='<c-j>'
 let g:UltiSnipsJumpBackwardTrigger='<c-k>'
 
 """for eclim
-let g:EclimCompletionMethod = 'omnifunc'
-let g:pairtools_samplefile_path = '/home/mht/'
+"let g:EclimCompletionMethod = 'omnifunc'
+"
 nnoremap ,i :call Indent_after_insert()<CR>
 """for indent motion
 function! Indent_after_insert()
@@ -199,3 +189,16 @@ endfunction
 """for nerdtree
 autocmd StdinReadPre * let s:std_in=1
 autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+
+"""for javacomplete
+autocmd Filetype java setlocal omnifunc=javacomplete#Complete
+let b:classpath='/home/tumh/android.jar'
+nnoremap bn1 :buffer 1<cr>
+nnoremap bn2 :buffer 2<cr>
+nnoremap bn3 :buffer 3<cr>
+nnoremap bn4 :buffer 4<cr>
+nnoremap bn5 :buffer 5<cr>
+nnoremap bn6 :buffer 6<cr>
+nnoremap bn7 :buffer 7<cr>
+nnoremap bn8 :buffer 8<cr>
+nnoremap bn9 :buffer 9<cr>
