@@ -1,4 +1,3 @@
- 
 "set nocompatible
 filetype off
 set rtp+=~/.vim/bundle/vundle/
@@ -9,7 +8,6 @@ Plugin 'gmarik/vundle'
 Plugin 'tpope/vim-fugitive'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'Twinside/vim-cuteErrorMarker'
-Plugin 'Lokaltog/vim-powerline'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'majutsushi/tagbar'
 Plugin 'tpope/vim-surround'
@@ -20,11 +18,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'MartinLafreniere/vim-PairTools'
 Plugin 'indent-motion'
 Plugin 'othree/html5-syntax.vim'
-Plugin 'Visual-Mark'
-"Plugin 'mbbill/echofunc'
-Plugin 'mtth/locate.vim'
 Plugin 'airblade/vim-gitgutter'
-"Plugin 'LStinson/TagmaBufMgr'
 Plugin 'bling/vim-bufferline'
 Plugin 'Valloric/YouCompleteMe'
 "Plugin 'scrooloose/syntastic'
@@ -32,9 +26,11 @@ Plugin 'SirVer/ultisnips'
 Plugin 'honza/vim-snippets'
 Plugin 'mattn/emmet-vim'
 Plugin 'nanotech/jellybeans.vim'
-Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/unite.vim'
 Plugin 'vim-airline'
 Plugin 'cilquirm/javacomplete'
+Plugin 'Shougo/vimproc.vim'
+Plugin 'kshenoy/vim-signature'
 call vundle#end()            " required
 
 if match($TERM, "screen")!=-1
@@ -149,7 +145,6 @@ map <F8> :set hls! <Bar> set hls?<CR>
 """ Status Bar Setting(s)
 set t_Co=256 " Explicitly tell vim that the terminal supports 256 colors
 set laststatus=2 
-let g:Powerline_symbols = 'fancy'
 
 
 "for dbext and SQLComplete
@@ -187,12 +182,13 @@ function! Indent_after_insert()
 endfunction
 
 """for nerdtree
-autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+"autocmd StdinReadPre * let s:std_in=1
+"autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 """for javacomplete
 autocmd Filetype java setlocal omnifunc=javacomplete#Complete
 let b:classpath='/home/tumh/android.jar'
+"""for navigation of buffers
 nnoremap bn1 :buffer 1<cr>
 nnoremap bn2 :buffer 2<cr>
 nnoremap bn3 :buffer 3<cr>
@@ -202,3 +198,13 @@ nnoremap bn6 :buffer 6<cr>
 nnoremap bn7 :buffer 7<cr>
 nnoremap bn8 :buffer 8<cr>
 nnoremap bn9 :buffer 9<cr>
+"""for vim-airline
+let g:airline#extensions#whitespace#checks = []
+let g:airline#extensions#hunks#enabled = 0
+"""for unite.vim
+nnoremap <C-p> : Unite file_rec/async<cr>
+nnoremap <space>/ :Unite grep:.<cr>
+nnoremap <space>y :<C-u>Unite -buffer-name=yanks history/yank<cr>
+nnoremap <space>s :Unite -quick-match buffer<cr>
+let g:unite_enable_start_insert=1
+let g:unite_source_history_yank_enable=1
