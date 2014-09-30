@@ -19,7 +19,7 @@ Plugin 'MartinLafreniere/vim-PairTools'
 Plugin 'indent-motion'
 Plugin 'othree/html5-syntax.vim'
 Plugin 'airblade/vim-gitgutter'
-Plugin 'bling/vim-bufferline'
+Plugin 'techlivezheng/vim-plugin-minibufexpl'
 Plugin 'Valloric/YouCompleteMe'
 "Plugin 'scrooloose/syntastic'
 Plugin 'SirVer/ultisnips'
@@ -187,7 +187,7 @@ endfunction
 
 """for javacomplete
 autocmd Filetype java setlocal omnifunc=javacomplete#Complete
-let b:classpath='/home/tumh/android.jar'
+let b:classpath='$ANDROID_HOME/platforms/android-20/android.jar'
 """for navigation of buffers
 nnoremap bn1 :buffer 1<cr>
 nnoremap bn2 :buffer 2<cr>
@@ -208,3 +208,10 @@ nnoremap <space>y :<C-u>Unite -buffer-name=yanks history/yank<cr>
 nnoremap <space>s :Unite -quick-match buffer<cr>
 let g:unite_enable_start_insert=1
 let g:unite_source_history_yank_enable=1
+" MiniBufExpl Colors
+hi MBENormal               ctermfg=244 ctermbg=fg
+hi MBEChanged              ctermfg=55 guibg=fg
+hi MBEVisibleNormal        ctermfg=43 guibg=fg
+hi MBEVisibleChanged       ctermfg=63 guibg=fg
+hi MBEVisibleActiveNormal  ctermfg=80 guibg=fg
+hi MBEVisibleActiveChanged ctermfg=107 guibg=fg
