@@ -1,15 +1,13 @@
-vimrc
+dotfiles
 =====
 
-my vimrc settings
-
-First，Download my vimrc settings in your home directory:  
+First，Download the repo in your home directory:  
 ```
 git clone https://github.com/twmht/vimrc.git
 ```
 and cd the directory
 ```
-cd vimrc
+cd dotfiles
 ```
 using build.sh to build the dependency
 ```
