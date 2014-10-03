@@ -3,7 +3,7 @@ dotfiles
 
 First，Download the repo in your home directory:  
 ```
-git clone https://github.com/twmht/vimrc.git
+git clone https://github.com/twmht/dotfiles.git
 ```
 and cd the directory
 ```
