@@ -31,6 +31,7 @@ Plugin 'vim-airline'
 Plugin 'cilquirm/javacomplete'
 Plugin 'Shougo/vimproc.vim'
 Plugin 'kshenoy/vim-signature'
+"Plugin 'jcommenter.vim'
 call vundle#end()            " required
 
 if match($TERM, "screen")!=-1
