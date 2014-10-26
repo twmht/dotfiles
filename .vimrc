@@ -216,3 +216,5 @@ hi MBEVisibleNormal        ctermfg=43 guibg=fg
 hi MBEVisibleChanged       ctermfg=63 guibg=fg
 hi MBEVisibleActiveNormal  ctermfg=80 guibg=fg
 hi MBEVisibleActiveChanged ctermfg=107 guibg=fg
+" jcommenter
+autocmd FileType java map <M-c> :call JCommentWriter()<CR> 
