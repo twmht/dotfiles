@@ -4,39 +4,35 @@ set rtp+=~/.vim/bundle/vundle/
 call vundle#begin()
 " let Vundle manage Vundle
 " required! 
-Plugin 'gmarik/vundle'
+" vim-scripts repos
+"Plugin 'HTML-AutoCloseTag'
+"Plugin 'Lokaltog/vim-powerline'
+"Plugin 'SQLComplete.vim'
+"Plugin 'SirVer/ultisnips'
+"Plugin 'Twinside/vim-cuteErrorMarker'
+"Plugin 'dbext.vim'
+"Plugin 'scrooloose/syntastic'
 "Plugin 'tpope/vim-fugitive'
 Plugin 'Lokaltog/vim-easymotion'
-"Plugin 'Twinside/vim-cuteErrorMarker'
-"Plugin 'Lokaltog/vim-powerline'
-Plugin 'scrooloose/nerdcommenter'
-Plugin 'majutsushi/tagbar'
-Plugin 'tpope/vim-surround'
-" vim-scripts repos
-"Plugin 'SQLComplete.vim'
-"Plugin 'dbext.vim'
-"Plugin 'HTML-AutoCloseTag'
 Plugin 'MartinLafreniere/vim-PairTools'
-Plugin 'indent-motion'
-Plugin 'othree/html5-syntax.vim'
-Plugin 'Visual-Mark'
-"Plugin 'mbbill/echofunc'
-Plugin 'mtth/locate.vim'
-Plugin 'airblade/vim-gitgutter'
-"Plugin 'LStinson/TagmaBufMgr'
-Plugin 'bling/vim-bufferline'
-"Plugin 'Valloric/YouCompleteMe'
-"Plugin 'scrooloose/syntastic'
-"Plugin 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
-Plugin 'mattn/emmet-vim'
-Plugin 'nanotech/jellybeans.vim'
-Plugin 'scrooloose/nerdtree'
-Plugin 'vim-airline'
 Plugin 'Shougo/neocomplete.vim'
-Bundle 'Shougo/neosnippet'
-Bundle 'Shougo/neosnippet-snippets'
-"Plugin 'cilquirm/javacomplete'
+Plugin 'Shougo/neosnippet'
+Plugin 'Shougo/neosnippet-snippets'
+Plugin 'Visual-Mark'
+Plugin 'airblade/vim-gitgutter'
+Plugin 'gmarik/vundle'
+Plugin 'honza/vim-snippets'
+Plugin 'indent-motion'
+Plugin 'majutsushi/tagbar'
+Plugin 'mattn/emmet-vim'
+Plugin 'mtth/locate.vim'
+Plugin 'nanotech/jellybeans.vim'
+Plugin 'othree/html5-syntax.vim'
+Plugin 'scrooloose/nerdcommenter'
+Plugin 'scrooloose/nerdtree'
+Plugin 'techlivezheng/vim-plugin-minibufexpl'
+Plugin 'tpope/vim-surround'
+Plugin 'vim-airline'
 call vundle#end()            " required
 
 if match($TERM, "screen")!=-1
@@ -111,7 +107,6 @@ set fileencodings=utf-8,big5,euc-jp,gbk,euc-kr,utf-bom,iso8859-1
 set termencoding=utf-8
 
 """ Color Scheme Setting(s)
-"colorscheme wombat256
 colorscheme jellybeans
 
 """ Backup Setting(s)
@@ -168,17 +163,6 @@ augroup line_return
         \ endif
 augroup END
 
-"""for ycm
-"let g:ycm_global_ycm_extra_conf ='~/.vim/bundle/YouCompleteMe/third_party/ycmd/cpp/ycm/.ycm_extra_conf.py'
-"let g:ycm_complete_in_comments_and_strings = 1
-""""for ultisnips
-"let g:UltiSnipsExpandTrigger = '<c-e>'
-"let g:UltiSnipsJumpForwardTrigger='<c-j>'
-"let g:UltiSnipsJumpBackwardTrigger='<c-k>'
-
-"""for eclim
-"let g:EclimCompletionMethod = 'omnifunc'
-"
 nnoremap ,i :call Indent_after_insert()<CR>
 """for indent motion
 function! Indent_after_insert()
@@ -271,8 +255,8 @@ if !exists('g:neocomplete#sources#omni#input_patterns')
   let g:neocomplete#sources#omni#input_patterns = {}
 endif
 "let g:neocomplete#sources#omni#input_patterns.php = '[^. \t]->\h\w*\|\h\w*::'
-"let g:neocomplete#sources#omni#input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
-"let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
+let g:neocomplete#sources#omni#input_patterns.c = '[^.[:digit:] *\t]\%(\.\|->\)'
+let g:neocomplete#sources#omni#input_patterns.cpp = '[^.[:digit:] *\t]\%(\.\|->\)\|\h\w*::'
 
 " For perlomni.vim setting.
 " https://github.com/c9s/perlomni.vim
@@ -282,14 +266,6 @@ let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 imap <C-k>     <Plug>(neosnippet_expand_or_jump)
 smap <C-k>     <Plug>(neosnippet_expand_or_jump)
 xmap <C-k>     <Plug>(neosnippet_expand_target)
-
-" SuperTab like snippets behavior.
-imap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-\ "\<Plug>(neosnippet_expand_or_jump)"
-\: pumvisible() ? "\<C-n>" : "\<TAB>"
-smap <expr><TAB> neosnippet#expandable_or_jumpable() ?
-\ "\<Plug>(neosnippet_expand_or_jump)"
-\: "\<TAB>"
 
 " For snippet_complete marker.
 if has('conceal')
@@ -301,3 +277,5 @@ endif
 
 " Tell Neosnippet about the other snippets
 "let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
+" let the nerdcommenter use a extra space after and before the comment delimeter
+let NERDSpaceDelims=1
