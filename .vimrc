@@ -5,11 +5,10 @@ call vundle#begin()
 " let Vundle manage Vundle
 " required! 
 " vim-scripts repos
+" Plugin 'JessicaKMcIntosh/TagmaBufMgr'
 "Plugin 'HTML-AutoCloseTag'
-"Plugin 'Lokaltog/vim-powerline'
 "Plugin 'SQLComplete.vim'
 "Plugin 'SirVer/ultisnips'
-"Plugin 'Twinside/vim-cuteErrorMarker'
 "Plugin 'dbext.vim'
 "Plugin 'scrooloose/syntastic'
 "Plugin 'tpope/vim-fugitive'
