@@ -32,6 +32,7 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'techlivezheng/vim-plugin-minibufexpl'
 Plugin 'tpope/vim-surround'
 Plugin 'vim-airline'
+Plugin 'gregsexton/MatchTag'
 call vundle#end()            " required
 
 if match($TERM, "screen")!=-1
