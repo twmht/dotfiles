@@ -9,4 +9,4 @@ ln -s `pwd`/ftplugin/python.vim ~/.vim/ftplugin/python.vim
 ln -s `pwd`/.tmux.conf ~/.tmux.conf
 #cp -r ~/vimrc/syntax ~/.vim/
 #cp ~/vimrc/.screenrc ~/.screenrc
-#mkdir -p ~/.fonts && cd ~/.fonts/ && git clone https://github.com/scotu/ubuntu-mono-powerline.git && cd ~
+mkdir -p ~/.fonts && cd ~/.fonts/ && git clone https://github.com/scotu/ubuntu-mono-powerline.git && cd ~

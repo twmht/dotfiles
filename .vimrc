@@ -32,7 +32,8 @@ Plugin 'scrooloose/nerdtree'
 Plugin 'techlivezheng/vim-plugin-minibufexpl'
 Plugin 'tpope/vim-surround'
 Plugin 'vim-airline'
-Plugin 'gregsexton/MatchTag'
+" Plugin 'gregsexton/MatchTag'
+Plugin 'Valloric/MatchTagAlways'
 call vundle#end()            " required
 
 if match($TERM, "screen")!=-1
@@ -61,6 +62,7 @@ set linebreak
 set nolist
 filetype on
 filetype plugin indent on
+" filetype plugin on
 syntax on
 "turn on omnicomplete
 set ofu=syntaxcomplete#Complete
@@ -279,3 +281,5 @@ endif
 "let g:neosnippet#snippets_directory='~/.vim/bundle/vim-snippets/snippets'
 " let the nerdcommenter use a extra space after and before the comment delimeter
 let NERDSpaceDelims=1
+
+runtime macros/matchit.vim
