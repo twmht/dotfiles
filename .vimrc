@@ -5,7 +5,7 @@ call vundle#begin()
 " let Vundle manage Vundle
 " required! 
 " vim-scripts repos
-" Plugin 'JessicaKMcIntosh/TagmaBufMgr'
+Plugin 'JessicaKMcIntosh/TagmaBufMgr'
 "Plugin 'HTML-AutoCloseTag'
 "Plugin 'SQLComplete.vim'
 "Plugin 'SirVer/ultisnips'
@@ -29,7 +29,7 @@ Plugin 'nanotech/jellybeans.vim'
 Plugin 'othree/html5-syntax.vim'
 Plugin 'scrooloose/nerdcommenter'
 Plugin 'scrooloose/nerdtree'
-Plugin 'techlivezheng/vim-plugin-minibufexpl'
+" Plugin 'techlivezheng/vim-plugin-minibufexpl'
 Plugin 'tpope/vim-surround'
 Plugin 'vim-airline'
 " Plugin 'gregsexton/MatchTag'
@@ -285,3 +285,6 @@ let NERDSpaceDelims=1
 runtime macros/matchit.vim
 
 au FileType python set softtabstop = 4 tabstop = 4 shiftwidth = 4 textwidth = 79
+
+let g:TagmaBufMgrMapChjklbuf = 1
+let g:TagmaBufMgrMapChjkl = 0
