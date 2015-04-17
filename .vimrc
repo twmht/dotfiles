@@ -284,7 +284,5 @@ let NERDSpaceDelims=1
 
 runtime macros/matchit.vim
 
-au FileType python set softtabstop = 4 tabstop = 4 shiftwidth = 4 textwidth = 79
-
 let g:TagmaBufMgrMapChjklbuf = 1
 let g:TagmaBufMgrMapChjkl = 0
