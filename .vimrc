@@ -34,6 +34,7 @@ Plugin 'tpope/vim-surround'
 Plugin 'vim-airline'
 " Plugin 'gregsexton/MatchTag'
 Plugin 'Valloric/MatchTagAlways'
+Plugin 'nvie/vim-flake8'
 call vundle#end()            " required
 
 if match($TERM, "screen")!=-1
