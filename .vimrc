@@ -36,6 +36,7 @@ Plugin 'vim-airline'
 Plugin 'Valloric/MatchTagAlways'
 Plugin 'nvie/vim-flake8'
 Plugin 'twmht/jcommenter.vim'
+Plugin 'kshenoy/vim-signature'
 call vundle#end()            " required
 
 if match($TERM, "screen")!=-1
