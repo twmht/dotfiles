@@ -22,7 +22,6 @@ Plugin 'airblade/vim-gitgutter'
 Plugin 'gmarik/vundle'
 Plugin 'honza/vim-snippets'
 Plugin 'indent-motion'
-Plugin 'majutsushi/tagbar'
 Plugin 'mattn/emmet-vim'
 Plugin 'mtth/locate.vim'
 Plugin 'nanotech/jellybeans.vim'
@@ -38,14 +37,6 @@ Plugin 'nvie/vim-flake8'
 Plugin 'twmht/jcommenter.vim'
 Plugin 'kshenoy/vim-signature'
 call vundle#end()            " required
-
-if match($TERM, "screen")!=-1
-  set term=xterm
-endif
-" Screen-ify an external command.
-function InScreen(command)
-  return g:GNU_Screen_used ? 'screen '.a:command : a:command
-endfunction
 
 
 """ Basic Setting(s)
@@ -103,13 +94,18 @@ au BufReadPost * if line("'\"") > 0|if line("'\"") <= line("$")|exe("norm '\"")|
 au CursorMovedI,InsertLeave * if pumvisible() == 0|silent! pclose|endif
 "set completeopt=menuone,menu,longest,preview
 set completeopt=menuone,menu,longest
-highlight Pmenu ctermbg = 238 gui = bold
+highlight Pmenu ctermbg=238 gui=bold
 
 """ Encoding Setting(s)
 set encoding=utf8
 set fileencoding=utf8
 set fileencodings=utf-8,big5,euc-jp,gbk,euc-kr,utf-bom,iso8859-1
 set termencoding=utf-8
+
+""" gvim
+"reload menu with UTF-8 encoding
+source $VIMRUNTIME/delmenu.vim
+source $VIMRUNTIME/menu.vim
 
 """ Color Scheme Setting(s)
 colorscheme jellybeans
@@ -131,10 +127,6 @@ set tabstop=4
 set softtabstop=4
 "autocmd FileType python set complete+=k~/.vim/syntax/python.vim isk+=.,(
 
-""" tagbar settings
-nnoremap <silent> <F9> :TagbarToggle<CR>
-let g:tagbar_autofocus = 1
-let g:tagbar_autoclose = 1
 
 """ Folding Setting(s)
 set foldenable
@@ -151,7 +143,6 @@ map <F8> :set hls! <Bar> set hls?<CR>
 """ Status Bar Setting(s)
 set t_Co=256 " Explicitly tell vim that the terminal supports 256 colors
 set laststatus=2 
-let g:Powerline_symbols = 'fancy'
 
 
 "for dbext and SQLComplete
@@ -179,7 +170,8 @@ endfunction
 
 """for nerdtree
 autocmd StdinReadPre * let s:std_in=1
-autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
+""" no nerdtree pop up when no file input
+" autocmd VimEnter * if argc() == 0 && !exists("s:std_in") | NERDTree | endif
 
 """for javacomplete
 "autocmd Filetype java setlocal omnifunc=javacomplete#Complete
