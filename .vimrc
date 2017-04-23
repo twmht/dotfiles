@@ -12,6 +12,7 @@ Plugin 'JessicaKMcIntosh/TagmaBufMgr'
 "Plugin 'dbext.vim'
 "Plugin 'scrooloose/syntastic'
 "Plugin 'tpope/vim-fugitive'
+Plugin 'leafgarland/typescript-vim'
 Plugin 'Lokaltog/vim-easymotion'
 Plugin 'MartinLafreniere/vim-PairTools'
 Plugin 'Shougo/neocomplete.vim'
@@ -130,6 +131,10 @@ set shiftwidth=4
 set tabstop=4
 set softtabstop=4
 "autocmd FileType python set complete+=k~/.vim/syntax/python.vim isk+=.,(
+
+autocmd FileType proto set shiftwidth=2
+autocmd FileType proto set softtabstop=2
+autocmd FileType proto set tabstop=2
 
 """ tagbar settings
 nnoremap <silent> <F9> :TagbarToggle<CR>
