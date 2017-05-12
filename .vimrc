@@ -132,9 +132,7 @@ set tabstop=4
 set softtabstop=4
 "autocmd FileType python set complete+=k~/.vim/syntax/python.vim isk+=.,(
 
-autocmd FileType proto set shiftwidth=2
-autocmd FileType proto set softtabstop=2
-autocmd FileType proto set tabstop=2
+autocmd FileType proto,typescript,c,cpp set shiftwidth=2 softtabstop=2 tabstop=2
 
 """ tagbar settings
 nnoremap <silent> <F9> :TagbarToggle<CR>
