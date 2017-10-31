@@ -122,6 +122,7 @@ set nobackup
 "gnuplot
 au BufNewFile,BufRead *.gnu set filetype=gnuplot
 au BufNewFile,BufRead *.gradle set filetype=groovy
+au BufNewFile,BufRead *.prototxt set filetype=proto
 
 """ Indent Setting(s)
 set autoindent
@@ -294,3 +295,5 @@ let g:TagmaBufMgrMapChjklbuf = 1
 let g:TagmaBufMgrMapChjkl = 0
 " jcommenter
 autocmd FileType java map <M-c> :call JCommentWriter()<CR>
+
+let g:NERDCustomDelimiters = { 'proto': { 'left': '#'} }
