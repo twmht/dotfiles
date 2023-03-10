@@ -1,22 +1,14 @@
-vimrc
-=====
+dotfiles
+======== 
 
-my vimrc settings
-
-First，Download my vimrc settings in your home directory:  
 ```
-git clone https://github.com/twmht/vimrc.git
+git clone https://github.com/twmht/dotfiles.git
 ```
-and cd the directory
 ```
-cd vimrc
+cd dotfiles && ./build.sh
 ```
-using build.sh to build the dependency
+Now luanch nvim and run the command to install plugins:
 ```
-./build.sh
-```
-Now luanch vim and run the command to install plugins:
-```
-:BundleInstall
+:PlugInstall
 ```
 Enjoy!
