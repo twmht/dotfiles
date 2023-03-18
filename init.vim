@@ -1,30 +1,18 @@
 "set nocompatible
 filetype off
 call plug#begin("~/.vim/plugged")
-" Plug 'dracula/vim'
-" Plug 'ryanoasis/vim-devicons'
 Plug 'scrooloose/nerdcommenter'
-Plug 'JessicaKMcIntosh/TagmaBufMgr'
 Plug 'martinda/Jenkinsfile-vim-syntax'
-" Plug 'leafgarland/typescript-vim'
 Plug 'Lokaltog/vim-easymotion'
-" Plug 'MartinLafreniere/vim-PairTools'
 Plug 'airblade/vim-gitgutter'
-" Plug 'honza/vim-snippets'
 Plug 'majutsushi/tagbar'
-" Plug 'mattn/emmet-vim'
-" Plug 'mtth/locate.vim'
 Plug 'nanotech/jellybeans.vim'
-" Plug 'othree/html5-syntax.vim'
 Plug 'scrooloose/nerdcommenter'
-" Plug 'scrooloose/nerdtree'
 Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
-" Plug 'Valloric/MatchTagAlways'
-" Plug 'nvie/vim-flake8'
-" Plug 'twmht/jcommenter.vim'
-" Plug 'kshenoy/vim-signature'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
+Plug 'nvim-lua/plenary.nvim'
+Plug 'j-morano/buffer_manager.nvim'
 call plug#end()
 
 " color scheme
@@ -301,3 +289,5 @@ nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
+
+nnoremap <silent><nowait> tt  :lua require("buffer_manager.ui").toggle_quick_menu()<CR>
