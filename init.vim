@@ -12,7 +12,10 @@ Plug 'tpope/vim-surround'
 Plug 'vim-airline/vim-airline'
 Plug 'neoclide/coc.nvim', {'branch': 'release'}
 Plug 'nvim-lua/plenary.nvim'
-Plug 'j-morano/buffer_manager.nvim'
+Plug 'j-morano/buffer_manager.nvim', {'branch': 'highlight-modified'}
+Plug 'MunifTanjim/nui.nvim'
+Plug 'dpayne/CodeGPT.nvim'
+Plug 'kassio/neoterm'
 call plug#end()
 
 " color scheme
@@ -289,5 +292,6 @@ nnoremap <silent><nowait> <space>j  :<C-u>CocNext<CR>
 nnoremap <silent><nowait> <space>k  :<C-u>CocPrev<CR>
 " Resume latest coc list
 nnoremap <silent><nowait> <space>p  :<C-u>CocListResume<CR>
+hi BufferManagerModified guifg=#e32636
 
 nnoremap <silent><nowait> tt  :lua require("buffer_manager.ui").toggle_quick_menu()<CR>
