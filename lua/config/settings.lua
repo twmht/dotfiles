@@ -1,4 +1,11 @@
 vim.g.mapleader=','
+-- if vim.fn.has('nvim') == 1 then
+    -- vim.env.NVIM_TUI_ENABLE_TRUE_COLOR = 1
+-- end
+vim.o.term  =  "xterm"
+vim.o.t_Co = 256
+vim.o.t_AB = "\27[48;5;%dm"
+vim.o.t_AF = "\27[38;5;%dm"
 if vim.fn.has("termguicolors") then
     vim.o.termguicolors = true
 end
@@ -13,10 +20,10 @@ vim.o.mouse="nv"
 vim.o.ffs="unix,mac,dos"
 vim.o.number = true
 vim.o.showmode = true
-vim.wo.cursorline = true
+--vim.wo.cursorline = true
 vim.o.wildmenu = true
 vim.o.wildmode="list:longest,full"
-vim.wo.cursorcolumn = true
+--vim.wo.cursorcolumn = true
 vim.o.backspace="2"
 vim.wo.wrap = true
 vim.wo.linebreak = true
