@@ -29,7 +29,7 @@ require('lazy').setup({
     {'morhetz/gruvbox'},
     {'rebelot/kanagawa.nvim'},
     {'j-morano/buffer_manager.nvim', branch='highlight-modified', dependencies={'nvim-lua/plenary.nvim'}},
-    {'danymat/neogen', dependencies={'nvim-treesitter/nvim-treesitter'}}
+    {'danymat/neogen', dependencies={'nvim-treesitter/nvim-treesitter', cmd='TSUpdate'}}
 })
 
 -- Config for color scheme
@@ -41,3 +41,4 @@ require('config/colorscheme')
  require('config/tagbar')
  require('config/buffer_manager')
  require('config/coc')
+ require('config/treesitter')
